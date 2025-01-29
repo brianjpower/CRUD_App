@@ -21,14 +21,13 @@ def addButtons(window):
     resetBtn.place(x=520, y=160)
 
 def addLabels(window):
+    #Need labels for employee ID, employee name and employee dept
     empID = Label(window,text="Employee ID", font=("Serif", 12))
     empID.place(x=20,y=30)
     empName = Label(window,text="Employee Name", font=("Serif", 12))
     empName.place(x=20,y=60)
     empDept = Label(window,text="Employee Dept", font=("Serif", 12))
     empDept.place(x=20,y=90)
-    enterID = Entry(window)
-    enterID.place(x=170,y=30)
 
 def addEntry(window):
     enterID = Entry(window)
