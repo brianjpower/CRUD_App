@@ -7,11 +7,8 @@ import mysql.connector
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 def gui():
     window = Tk()
-    name = Label(text="Employee CRUD App", fg="blue", bg="white", font=("Arial Bold", 12))
-    window.geometry("400x300")
+    window.geometry("600x270")
     window.title("Employee CRUD App")
-    name = Label(text="Employee CRUD App", fg="blue", bg="white", font=("Arial Bold", 12))
-    name.pack()
     window.mainloop()
 
 
