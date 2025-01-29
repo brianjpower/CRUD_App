@@ -14,7 +14,7 @@ def addLabels(window):
     empDept.place(x=20,y=90)
     enterID = Entry(window)
     enterID.place(x=170,y=30)
-    enterName = Entry(window)
+
 
 def addEntry(window):
     enterID = Entry(window)
