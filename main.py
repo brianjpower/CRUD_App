@@ -36,6 +36,10 @@ def addEntry(window):
     enterDept = Entry(window)
     enterDept.place(x=170, y=90)
 
+def listBox(window):
+    showData = Listbox(window)
+    showData.place(x=330, y=30)
+
 def crud_gui():
     window = Tk()
     window.geometry("600x270")
@@ -43,6 +47,7 @@ def crud_gui():
     addLabels(window)
     addEntry(window)
     addButtons(window)
+    listBox(window)
     window.mainloop()
 
 # Press the green button in the gutter to run the script.
