@@ -7,9 +7,9 @@ import mysql.connector
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-def addButtons(window):
+def addButtons(window,enterID, enterName, enterDept):
     #Need buttons to insert, update, fetch, delete and reset
-    insertBtn = Button(window,text="Insert", font=("Sans", 12), bg="white",command=insertData)
+    insertBtn = Button(window,text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(enterID, enterName, enterDept))
     insertBtn.place(x=20, y=160)
     updateBtn = Button(window,text="Update", font=("Sans", 12), bg="white")
     updateBtn.place(x=80, y=160)
@@ -50,9 +50,9 @@ def crud_gui():
     window.title("Employee CRUD App")
     addLabels(window)
     enterID, enterName, enterDept = addEntry(window)
-    addButtons(window)
+    addButtons(window, enterID, enterName, enterDept)
     listBox(window)
-    insertData(enterID, enterName, enterDept)
+    #insertData(enterID, enterName, enterDept)
     window.mainloop()
 
 def insertData(enterID, enterName, enterDept):
