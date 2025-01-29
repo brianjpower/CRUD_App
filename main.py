@@ -36,7 +36,7 @@ def addEntry(window):
     enterDept = Entry(window)
     enterDept.place(x=170, y=90)
 
-def gui():
+def crud_gui():
     window = Tk()
     window.geometry("600x270")
     window.title("Employee CRUD App")
@@ -47,7 +47,7 @@ def gui():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    gui()
+    crud_gui()
 
 
 
