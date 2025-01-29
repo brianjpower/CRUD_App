@@ -16,17 +16,20 @@ def addLabels(window):
     enterID.place(x=170,y=30)
     enterName = Entry(window)
 
+def addEntry(window):
+    enterID = Entry(window)
+    enterID.place(x=170, y=30)
+    enterName = Entry(window)
+    enterName.place(x=170, y=60)
+    enterDept = Entry(window)
+    enterDept.place(x=170, y=90)
+
 def gui():
     window = Tk()
     window.geometry("600x270")
     window.title("Employee CRUD App")
     addLabels(window)
-    enterID = Entry(window)
-    enterID.place(x=170,y=30)
-    enterName = Entry(window)
-    enterName.place(x=170,y=60)
-    enterDept = Entry(window)
-    enterDept.place(x=170,y=90)
+    addEntry(window)
     window.mainloop()
 
 
