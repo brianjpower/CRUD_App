@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="adding command as lambda function so that it is not run straight away in">
-      <change beforePath="$PROJECT_DIR$/.idea/CRUD_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRUD_App.iml" afterDir="false" />
+    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Fixing insert command to automatically handle argument types">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738067103210</updated>
       <workItem from="1738067104331" duration="9306000" />
-      <workItem from="1738148957730" duration="727000" />
+      <workItem from="1738148957730" duration="1442000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up base files for CRUD App.  This app will be GUI based and will allow the reading and updating of an SQL database">
       <option name="closed" value="true" />
@@ -205,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738148692040</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixing insert command to automatically handle argument types">
+      <option name="closed" value="true" />
+      <created>1738149825675</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1738149825675</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +246,8 @@
     <MESSAGE value="Adding basic listBox sub to gui to be able to view database data" />
     <MESSAGE value="Added insertData sub to complete action of inserting data and insert button is clicked.  Ensured also that we pass the enterID, enterName and enterDept objects into the insertData sub" />
     <MESSAGE value="adding command as lambda function so that it is not run straight away in" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding command as lambda function so that it is not run straight away in" />
+    <MESSAGE value="Fixing insert command to automatically handle argument types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing insert command to automatically handle argument types" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,6 +261,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738149476212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738149692603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
