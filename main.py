@@ -9,6 +9,8 @@ def gui():
     window = Tk()
     window.geometry("600x270")
     window.title("Employee CRUD App")
+    empID = Label(window,text="Employee ID", font=("Serif", 12))
+    empID.place(x=20,y=30)
     window.mainloop()
 
 
