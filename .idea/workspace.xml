@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="" />
+    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="adding command as lambda function so that it is not run straight away in">
+      <change beforePath="$PROJECT_DIR$/.idea/CRUD_App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CRUD_App.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,23 +17,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2sG1TETo6dm9V0hk9g35iREHuLA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -43,11 +58,202 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1738067103210</updated>
-      <workItem from="1738067104331" duration="3000" />
+      <workItem from="1738067104331" duration="9306000" />
+      <workItem from="1738148957730" duration="727000" />
     </task>
+    <task id="LOCAL-00001" summary="Setting up base files for CRUD App.  This app will be GUI based and will allow the reading and updating of an SQL database">
+      <option name="closed" value="true" />
+      <created>1738067210585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738067210585</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Setting up base Tk app window with Application title">
+      <option name="closed" value="true" />
+      <created>1738144189913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144189913</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Moving gui code from main to gui subroutine and adding window label and window geometry">
+      <option name="closed" value="true" />
+      <created>1738144468077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144468077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updaing window geometry and removing unnecessary window label">
+      <option name="closed" value="true" />
+      <created>1738144624790</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144624790</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adding Employee ID label">
+      <option name="closed" value="true" />
+      <created>1738144814200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144814200</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adding Employee name label">
+      <option name="closed" value="true" />
+      <created>1738144846213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144846213</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adding Employee Dept label">
+      <option name="closed" value="true" />
+      <created>1738144917519</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738144917519</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adding entry objects for empID, empName and empDept">
+      <option name="closed" value="true" />
+      <created>1738145072582</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145072582</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Moving label operations into new addLabels sub">
+      <option name="closed" value="true" />
+      <created>1738145225912</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145225912</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Moving entry operations into new addEntry sub">
+      <option name="closed" value="true" />
+      <created>1738145307976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145307976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Removing entry object from AddLabels sub">
+      <option name="closed" value="true" />
+      <created>1738145367780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145367780</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Adding new sub addButtons to add the required action buttons to the gui">
+      <option name="closed" value="true" />
+      <created>1738145758607</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145758607</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Adding new sub addButtons to add the required action buttons to the gui">
+      <option name="closed" value="true" />
+      <created>1738145807869</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738145807869</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Updating button locations in addButtons">
+      <option name="closed" value="true" />
+      <created>1738146059796</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1738146059796</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Renaming gui sub to crud_gui to make less generic">
+      <option name="closed" value="true" />
+      <created>1738146121773</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1738146121773</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Adding basic listBox sub to gui to be able to view database data">
+      <option name="closed" value="true" />
+      <created>1738146270080</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1738146270080</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added insertData sub to complete action of inserting data and insert button is clicked.  Ensured also that we pass the enterID, enterName and enterDept objects into the insertData sub">
+      <option name="closed" value="true" />
+      <created>1738148156334</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1738148156334</updated>
+    </task>
+    <task id="LOCAL-00018" summary="adding command as lambda function so that it is not run straight away in">
+      <option name="closed" value="true" />
+      <created>1738148692040</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1738148692040</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setting up base files for CRUD App.  This app will be GUI based and will allow the reading and updating of an SQL database" />
+    <MESSAGE value="Setting up base Tk app window with Application title" />
+    <MESSAGE value="Moving gui code from main to gui subroutine and adding window label and window geometry" />
+    <MESSAGE value="Updaing window geometry and removing unnecessary window label" />
+    <MESSAGE value="Adding Employee ID label" />
+    <MESSAGE value="Adding Employee name label" />
+    <MESSAGE value="Adding Employee Dept label" />
+    <MESSAGE value="Adding entry objects for empID, empName and empDept" />
+    <MESSAGE value="Moving label operations into new addLabels sub" />
+    <MESSAGE value="Moving entry operations into new addEntry sub" />
+    <MESSAGE value="Removing entry object from AddLabels sub" />
+    <MESSAGE value="Adding new sub addButtons to add the required action buttons to the gui" />
+    <MESSAGE value="Updating button locations in addButtons" />
+    <MESSAGE value="Renaming gui sub to crud_gui to make less generic" />
+    <MESSAGE value="Adding basic listBox sub to gui to be able to view database data" />
+    <MESSAGE value="Added insertData sub to complete action of inserting data and insert button is clicked.  Ensured also that we pass the enterID, enterName and enterDept objects into the insertData sub" />
+    <MESSAGE value="adding command as lambda function so that it is not run straight away in" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding command as lambda function so that it is not run straight away in" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738149476212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

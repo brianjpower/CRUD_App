@@ -70,8 +70,9 @@ def insertData(enterID, enterName, enterDept):
             database="employee"
         )
         myCur = mydb.cursor()
-        sql = "INSERT INTO employees (empID, empName, empDept) VALUES (id, name, dept)"
-        myCur.execute(sql)
+        #sql = "INSERT INTO empDetails (empID, empName, empDept) VALUES (id, name, dept)"
+        sql = "INSERT INTO empDetails (empID, empName, empDept) VALUES (%s, %s, %s)"
+        myCur.execute(sql, (id, name, dept))
         mydb.commit()
 
         #Clear the names filled by the user in the gui so it is ready for next operation
