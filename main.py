@@ -13,6 +13,8 @@ def gui():
     empID.place(x=20,y=30)
     empName = Label(window,text="Employee Name", font=("Serif", 12))
     empName.place(x=20,y=60)
+    empDept = Label(window,text="Employee Depart", font=("Serif", 12))
+    empDept.place(x=20,y=90)
     window.mainloop()
 
 
