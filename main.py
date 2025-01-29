@@ -11,6 +11,8 @@ def gui():
     window.title("Employee CRUD App")
     empID = Label(window,text="Employee ID", font=("Serif", 12))
     empID.place(x=20,y=30)
+    empName = Label(window,text="Employee Name", font=("Serif", 12))
+    empName.place(x=20,y=60)
     window.mainloop()
 
 
