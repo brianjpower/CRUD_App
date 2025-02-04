@@ -97,14 +97,21 @@ def updateData(enterID, enterName, enterDept):
             database="employee"
         )
         myCur = mydb.cursor()
-        sql = "UPDATE empDetails SET empName = %s, empDept = %s WHERE empID = %s"
-        myCur.execute(sql, (name, dept, id))
-        mydb.commit()
-        # Clear the names filled by the user in the gui so it is ready for next operation
-        enterID.delete(0, END)
-        enterName.delete(0, END)
-        enterDept.delete(0, END)
-        messagebox.showinfo("Update Status", "Data updated successfully")
+        check_query = "SELECT * FROM empDetails WHERE empID = %s"
+        myCur.execute(check_query, (id,))
+        result = myCur.fetchone()
+
+        if result is None:  # If no record is found with the given empID
+            messagebox.showerror("Update Error", "Employee ID must exist to update the entry")
+        else:
+            sql = "UPDATE empDetails SET empName = %s, empDept = %s WHERE empID = %s"
+            myCur.execute(sql, (name, dept, id))
+            mydb.commit()
+            # Clear the names filled by the user in the gui so it is ready for next operation
+            enterID.delete(0, END)
+            enterName.delete(0, END)
+            enterDept.delete(0, END)
+            messagebox.showinfo("Update Status", "Data updated successfully")
         myCur.close()
         mydb.close()
 if __name__ == '__main__':
