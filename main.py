@@ -15,7 +15,7 @@ def addButtons(window,enterID, enterName, enterDept):
     updateBtn.place(x=80, y=160)
     fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(enterID, enterName, enterDept))
     fetchBtn.place(x=150, y=160)
-    deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white")
+    deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(enterID,enterName, enterDept))
     deleteBtn.place(x=210, y=160)
     resetBtn = Button(window,text="Reset", font=("Sans", 12), bg="white")
     resetBtn.place(x=20, y=210)
@@ -82,6 +82,48 @@ def insertData(enterID, enterName, enterDept):
         messagebox.showinfo("Insert Status", "Data inserted successfully")
         myCur.close()
         mydb.close()
+
+def removeData(enterID,enterName, enterDept):
+    id = enterID.get().strip()
+    if id == "":
+        messagebox.showwarning("Cannot delete this data",
+                               "Please enter employee id in order to delete the data for this employee")
+        return
+    try:
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password=os.getenv("DB_PASSWORD"),
+            database="employee"
+        )
+        myCur = mydb.cursor()
+        #check_query = "SELECT * FROM empDetails WHERE empID = %s"
+        #myCur.execute(check_query, (id,))
+        #result = myCur.fetchone()
+        #if result is None:  # If no record is found with the given empID
+        #    messagebox.showerror("Delete Error", "Employee ID must exist to delete the entry")
+        #else:
+        del_query = "DELETE FROM empDetails WHERE empID = %s"
+        myCur.execute(del_query, (id,))
+        if myCur.rowcount == 0:
+            messagebox.showerror("Delete Error", f"No data found for Employee ID: {id}")
+        else:
+            #Complete the transaction
+            mydb.commit()
+            messagebox.showinfo("Delete Status", f"Data deleted successfully for employee {id}")
+            # Clear the names filled by the user in the gui so it is ready for next operation
+            enterID.delete(0, END)
+            enterName.delete(0, END)
+            enterDept.delete(0, END)
+    except mysql.connector.Error as e:
+        # Handle database connection errors or query errors
+        messagebox.showerror("Database Error", f"An error occurred: {e}")
+    finally:
+        # Close database connection
+        if 'myCur' in locals():
+            myCur.close()
+        if 'mydb' in locals():
+            mydb.close()
 
 def getData(enterID, enterName, enterDept):
     id = enterID.get().strip() # Get the id and remove any trailing characters
