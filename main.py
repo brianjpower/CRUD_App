@@ -7,17 +7,17 @@ import mysql.connector
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-def addButtons(window,enterID, enterName, enterDept):
+def addButtons(window,enterID, enterName, enterDept, listBox):
     #Need buttons to insert, update, fetch, delete and reset
-    insertBtn = Button(window,text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(enterID, enterName, enterDept))
+    insertBtn = Button(window,text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(enterID, enterName, enterDept, listBox))
     insertBtn.place(x=20, y=160)
-    updateBtn = Button(window,text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(enterID, enterName, enterDept))
+    updateBtn = Button(window,text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(enterID, enterName, enterDept, listBox))
     updateBtn.place(x=80, y=160)
     fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(enterID, enterName, enterDept))
     fetchBtn.place(x=150, y=160)
     deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(enterID,enterName, enterDept))
     deleteBtn.place(x=210, y=160)
-    resetBtn = Button(window,text="Reset", font=("Sans", 12), bg="white")
+    resetBtn = Button(window,text="Reset", font=("Sans", 12), bg="white", command=lambda: resetFields(enterID, enterName, enterDept))
     resetBtn.place(x=20, y=210)
 
 def addLabels(window):
@@ -40,9 +40,10 @@ def addEntry(window):
     return enterID, enterName, enterDept  # Return the entry widgets for later use
 
 
-def listBox(window):
+def listbox(window):
     showData = Listbox(window)
     showData.place(x=330, y=30)
+    return showData
 
 def crud_gui():
     window = Tk()
@@ -50,12 +51,12 @@ def crud_gui():
     window.title("Employee CRUD App")
     addLabels(window)
     enterID, enterName, enterDept = addEntry(window)
-    addButtons(window, enterID, enterName, enterDept)
-    listBox(window)
+    listBox = listbox(window)
+    addButtons(window, enterID, enterName, enterDept, listBox)
     #insertData(enterID, enterName, enterDept)
     window.mainloop()
 
-def insertData(enterID, enterName, enterDept):
+def insertData(enterID, enterName, enterDept, listBox):
     id = enterID.get()
     name = enterName.get()
     dept = enterDept.get()
@@ -79,6 +80,7 @@ def insertData(enterID, enterName, enterDept):
         enterID.delete(0, END)
         enterName.delete(0, END)
         enterDept.delete(0, END)
+        show(listBox)
         messagebox.showinfo("Insert Status", "Data inserted successfully")
         myCur.close()
         mydb.close()
@@ -163,8 +165,9 @@ def getData(enterID, enterName, enterDept):
         if 'mydb' in locals():
             mydb.close()
 
-def updateData(enterID, enterName, enterDept):
+def updateData(enterID, enterName, enterDept, window):
     id = enterID.get()
+
     name = enterName.get()
     dept = enterDept.get()
     if id == "" or name == "" or dept == "":
@@ -192,9 +195,53 @@ def updateData(enterID, enterName, enterDept):
             enterID.delete(0, END)
             enterName.delete(0, END)
             enterDept.delete(0, END)
+            show(listBox)
             messagebox.showinfo("Update Status", "Data updated successfully")
         myCur.close()
         mydb.close()
+
+def show(listBox):
+    try:
+        # Connect to the database
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password=os.getenv("DB_PASSWORD"),
+            database="employee"
+            )
+        myCur = mydb.cursor()
+
+        # Execute query to fetch all data from the table
+        myCur.execute("SELECT * FROM empDetails")
+        records = myCur.fetchall()
+
+        # Clear the Listbox before updating it
+        listBox.delete(0, END)
+
+        # Insert column headers at the top of the Listbox (optional)
+        listBox.insert(END, f"{'Employee ID':<15}{'Name':<25}{'Department':<15}")
+        listBox.insert(END, "=" * 55)
+
+        # Insert rows into the Listbox dynamically
+        for row in records:
+            listBox.insert(END, f"{row[0]:<15}{row[1]:<25}{row[2]:<15}")
+
+    except mysql.connector.Error as e:
+        # Handle database errors with a meaningful message
+        messagebox.showerror("Database Error", f"An error occurred: {e}")
+    finally:
+        # Always close the database cursor and connection to avoid leaks
+        if 'myCur' in locals():
+            myCur.close()
+        if 'mydb' in locals():
+            mydb.close()
+
+def resetFields(enterID, enterName, enterDept):
+    enterID.delete(0, END)
+    enterName.delete(0, END)
+    enterDept.delete(0, END)
+
+
 if __name__ == '__main__':
     crud_gui()
 

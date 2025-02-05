@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Fixed code in getData to solve exceptions, ensuring SQL command parameters are used correctly">
+    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Adding code to delete data, attaching the action to delete button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -236,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738755358306</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Adding code to delete data, attaching the action to delete button">
+      <option name="closed" value="true" />
+      <created>1738757473338</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1738757473338</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,20 +283,21 @@
     <MESSAGE value="Added updateData subroutine" />
     <MESSAGE value="Adding code in updateData to check that the empID actually exists before trying to update the entry" />
     <MESSAGE value="Fixed code in getData to solve exceptions, ensuring SQL command parameters are used correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed code in getData to solve exceptions, ensuring SQL command parameters are used correctly" />
+    <MESSAGE value="Adding code to delete data, attaching the action to delete button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding code to delete data, attaching the action to delete button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738757431349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738760727537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
