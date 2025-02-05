@@ -13,7 +13,7 @@ def addButtons(window,enterID, enterName, enterDept):
     insertBtn.place(x=20, y=160)
     updateBtn = Button(window,text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(enterID, enterName, enterDept))
     updateBtn.place(x=80, y=160)
-    fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white")
+    fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(enterID, enterName, enterDept))
     fetchBtn.place(x=150, y=160)
     deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white")
     deleteBtn.place(x=210, y=160)
@@ -82,6 +82,45 @@ def insertData(enterID, enterName, enterDept):
         messagebox.showinfo("Insert Status", "Data inserted successfully")
         myCur.close()
         mydb.close()
+
+def getData(enterID, enterName, enterDept):
+    id = enterID.get().strip() # Get the id and remove any trailing characters
+    #Check if id is empty
+    if id == "":
+        messagebox.showwarning("Cannot fetch this data",
+                               "Please enter employee id in order to fetch the data for the other fields")
+        return
+    try:
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password=os.getenv("DB_PASSWORD"),
+            database="employee"
+        )
+        myCur = mydb.cursor()
+        data_query = "SELECT empName, empDept FROM empDetails WHERE empID = %s"
+        myCur.execute(data_query, (id,))
+        #Use 'id' as a single-item tuple
+        result = myCur.fetchone()
+        if result is None:
+            messagebox.showerror("Fetch Error", f"Employee ID does not exist for employee ID: {id}")
+        else:
+            empName, empDept = result
+            enterName.delete(0, END)
+            enterName.insert(0, empName)
+            enterDept.delete(0, END)
+            enterDept.insert(0, empDept)
+            messagebox.showinfo("Fetch Status", "Data fetched successfully")
+    except mysql.connector.Error as e:
+        # Handle database connection errors or query errors
+        messagebox.showerror("Database Error", f"An error occurred: {e}")
+    finally:
+        # Close database connection
+        if 'myCur' in locals():
+            myCur.close()
+        if 'mydb' in locals():
+            mydb.close()
+
 def updateData(enterID, enterName, enterDept):
     id = enterID.get()
     name = enterName.get()
