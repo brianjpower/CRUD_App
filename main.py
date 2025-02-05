@@ -42,18 +42,19 @@ def addEntry(window):
 
 def listbox(window):
     showData = Listbox(window)
-    showData.place(x=330, y=30)
+    showData.place(x=330, y=30, width = 300)
     return showData
 
 def crud_gui():
     window = Tk()
-    window.geometry("600x270")
+    window.geometry("800x470")
     window.title("Employee CRUD App")
     addLabels(window)
     enterID, enterName, enterDept = addEntry(window)
     listBox = listbox(window)
     addButtons(window, enterID, enterName, enterDept, listBox)
     #insertData(enterID, enterName, enterDept)
+    show(listBox)
     window.mainloop()
 
 def insertData(enterID, enterName, enterDept, listBox):
