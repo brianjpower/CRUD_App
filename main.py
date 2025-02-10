@@ -15,7 +15,7 @@ def addButtons(window,enterID, enterName, enterDept, listBox):
     updateBtn.place(x=80, y=160)
     fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(enterID, enterName, enterDept))
     fetchBtn.place(x=150, y=160)
-    deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(enterID,enterName, enterDept))
+    deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(enterID,enterName, enterDept, listBox))
     deleteBtn.place(x=210, y=160)
     resetBtn = Button(window,text="Reset", font=("Sans", 12), bg="white", command=lambda: resetFields(enterID, enterName, enterDept))
     resetBtn.place(x=20, y=210)
@@ -86,7 +86,7 @@ def insertData(enterID, enterName, enterDept, listBox):
         myCur.close()
         mydb.close()
 
-def removeData(enterID,enterName, enterDept):
+def removeData(enterID,enterName, enterDept, listBox):
     id = enterID.get().strip()
     if id == "":
         messagebox.showwarning("Cannot delete this data",
@@ -115,6 +115,7 @@ def removeData(enterID,enterName, enterDept):
             mydb.commit()
             messagebox.showinfo("Delete Status", f"Data deleted successfully for employee {id}")
             # Clear the names filled by the user in the gui so it is ready for next operation
+            show(listBox)
             enterID.delete(0, END)
             enterName.delete(0, END)
             enterDept.delete(0, END)
@@ -220,12 +221,12 @@ def show(listBox):
         listBox.delete(0, END)
 
         # Insert column headers at the top of the Listbox (optional)
-        listBox.insert(END, f"{'Employee ID':<15}{'Name':<25}{'Department':<15}")
+        listBox.insert(END, f"{'Employee ID':<25}{'Name':<25}{'Department':<35}")
         listBox.insert(END, "=" * 55)
 
         # Insert rows into the Listbox dynamically
         for row in records:
-            listBox.insert(END, f"{row[0]:<15}{row[1]:<25}{row[2]:<15}")
+            listBox.insert(END, f"{row[0]:<25}{row[1]:<25}{row[2]:<35}")
 
     except mysql.connector.Error as e:
         # Handle database errors with a meaningful message

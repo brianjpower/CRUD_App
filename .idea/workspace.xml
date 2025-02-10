@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Added show sub to display data when data is updated">
+    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Made window and listbox bigger">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738760927825</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Made window and listbox bigger">
+      <option name="closed" value="true" />
+      <created>1738761174440</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1738761174440</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +301,8 @@
     <MESSAGE value="Fixed code in getData to solve exceptions, ensuring SQL command parameters are used correctly" />
     <MESSAGE value="Adding code to delete data, attaching the action to delete button" />
     <MESSAGE value="Added show sub to display data when data is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added show sub to display data when data is updated" />
+    <MESSAGE value="Made window and listbox bigger" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made window and listbox bigger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -306,6 +316,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1738761020459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CRUD_App$main.coverage" NAME="main Coverage Results" MODIFIED="1739185762221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
