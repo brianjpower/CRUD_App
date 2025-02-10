@@ -116,7 +116,7 @@ def getData(enterID, enterName, enterDept):
         if 'mydb' in locals():
             mydb.close()
 
-def updateData(enterID, enterName, enterDept, window):
+def updateData(enterID, enterName, enterDept, listBox,):
     id = enterID.get()
 
     name = enterName.get()

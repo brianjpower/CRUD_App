@@ -4,51 +4,61 @@ from tkinter import messagebox
 from utilities import show
 from sql_database_ops import insertData, removeData, getData, updateData, resetFields
 
-def addButtons(window,enterID, enterName, enterDept, listBox):
-    #Need buttons to insert, update, fetch, delete and reset
-    insertBtn = Button(window,text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(enterID, enterName, enterDept, listBox))
-    insertBtn.place(x=20, y=160)
-    updateBtn = Button(window,text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(enterID, enterName, enterDept, listBox))
-    updateBtn.place(x=80, y=160)
-    fetchBtn = Button(window,text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(enterID, enterName, enterDept))
-    fetchBtn.place(x=150, y=160)
-    deleteBtn = Button(window,text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(enterID,enterName, enterDept, listBox))
-    deleteBtn.place(x=210, y=160)
-    resetBtn = Button(window,text="Reset", font=("Sans", 12), bg="white", command=lambda: resetFields(enterID, enterName, enterDept))
-    resetBtn.place(x=20, y=210)
+class CrudGUI:
+    def __init__(self,geom, windowTitle):
+        #Initialise the main window
+        self.window = Tk()
+        self.window.geometry(geom)
+        self.window.title(windowTitle)
 
-def addLabels(window):
-    #Need labels for employee ID, employee name and employee dept
-    empID = Label(window,text="Employee ID", font=("Serif", 12))
-    empID.place(x=20,y=30)
-    empName = Label(window,text="Employee Name", font=("Serif", 12))
-    empName.place(x=20,y=60)
-    empDept = Label(window,text="Employee Dept", font=("Serif", 12))
-    empDept.place(x=20,y=90)
+        #Now define the main properties
+        self.enterID = None
+        self.enterName = None
+        self.enterDept = None
+        self.listBox = None
 
-def addEntry(window):
-    #Need entry fields for empID, empName and empDept
-    enterID = Entry(window)
-    enterID.place(x=170, y=30)
-    enterName = Entry(window)
-    enterName.place(x=170, y=60)
-    enterDept = Entry(window)
-    enterDept.place(x=170, y=90)
-    return enterID, enterName, enterDept  # Return the entry widgets for later use
+        self.create_buttons()
+        self.create_labels()
+        self.create_listbox()
+        self.enter_data()
+
+    def create_buttons(self):
+        insertBtn = Button(self.window, text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        insertBtn.place(x=20, y=160)
+        updateBtn = Button(self.window, text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        updateBtn.place(x=80, y=160)
+        fetchBtn = Button(self.window, text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(self.enterID, self.enterName, self.enterDept))
+        fetchBtn.place(x=150, y=160)
+        deleteBtn = Button(self.window, text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        deleteBtn.place(x=210, y=160)
+        resetBtn = Button(self.window, text="Reset", font=("Sans", 12), bg="white",command=lambda: resetFields(self.enterID, self.enterName, self.enterDept))
+        resetBtn.place(x=20, y=210)
+
+    def create_labels(self):
+        empID = Label(self.window, text="Employee ID", font=("Serif", 12))
+        empID.place(x=20, y=30)
+        empName = Label(self.window, text="Employee Name", font=("Serif", 12))
+        empName.place(x=20, y=60)
+        empDept = Label(self.window, text="Employee Dept", font=("Serif", 12))
+        empDept.place(x=20, y=90)
+
+    def create_listbox(self):
+        """
+        Add a listbox to display employee data.
+        """
+        self.listBox = Listbox(self.window)
+        self.listBox.place(x=330, y=30, width=300)
+        # Call the utility `show` to populate initial data
+        show(self.listBox)
+    def enter_data(self):
+        self.enterID = Entry(self.window)
+        self.enterID.place(x=170, y=30)
+        self.enterName = Entry(self.window)
+        self.enterName.place(x=170, y=60)
+        self.enterDept = Entry(self.window)
+        self.enterDept.place(x=170, y=90)
 
 
-def listbox(window):
-    showData = Listbox(window)
-    showData.place(x=330, y=30, width = 300)
-    return showData
+    def run(self):
+        self.window.mainloop()
 
-def crud_gui():
-    window = Tk()
-    window.geometry("800x470")
-    window.title("Employee CRUD App")
-    addLabels(window)
-    enterID, enterName, enterDept = addEntry(window)
-    listBox = listbox(window)
-    addButtons(window, enterID, enterName, enterDept, listBox)
-    show(listBox)
-    window.mainloop()
