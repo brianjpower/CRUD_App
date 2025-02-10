@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="Some text window alignment changes" />
+    <list default="true" id="93c06ff1-8629-46f6-8512-3d5dee1001d3" name="Changes" comment="workspace mods" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739185782808</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="workspace mods">
+      <option name="closed" value="true" />
+      <created>1739187872145</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1739187872145</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +303,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Setting up base files for CRUD App.  This app will be GUI based and will allow the reading and updating of an SQL database" />
     <MESSAGE value="Setting up base Tk app window with Application title" />
     <MESSAGE value="Moving gui code from main to gui subroutine and adding window label and window geometry" />
     <MESSAGE value="Updaing window geometry and removing unnecessary window label" />
@@ -320,7 +327,8 @@
     <MESSAGE value="Added show sub to display data when data is updated" />
     <MESSAGE value="Made window and listbox bigger" />
     <MESSAGE value="Some text window alignment changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some text window alignment changes" />
+    <MESSAGE value="workspace mods" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace mods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
