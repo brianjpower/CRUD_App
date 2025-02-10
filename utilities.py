@@ -1,3 +1,4 @@
+# This is a module containing the show utility required to display the sql database in the list window
 import os
 from tkinter import *
 from tkinter import messagebox

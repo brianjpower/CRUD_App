@@ -1,3 +1,4 @@
+# This is a module containing various gui window elements and their associated action calls
 from tkinter import *
 from tkinter import messagebox
 from utilities import show

@@ -1,4 +1,4 @@
-# This is a sample Python script.
+# This is a module containing CRUD sql operations
 import os
 from tkinter import *
 from tkinter import messagebox
