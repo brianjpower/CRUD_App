@@ -2,7 +2,10 @@
 from tkinter import *
 from tkinter import messagebox
 from utilities import show
-from sql_database_ops import insertData, removeData, getData, updateData, resetFields
+from sql_database_ops import Crud_sql_ops
+#from sql_database_ops import insertData, removeData, getData, updateData, resetFields
+
+
 
 class CrudGUI:
     def __init__(self,geom, windowTitle):
@@ -16,22 +19,25 @@ class CrudGUI:
         self.enterName = None
         self.enterDept = None
         self.listBox = None
-
+        self.enter_data()
+        self.create_listbox()
+        self.emp_crud_ops = Crud_sql_ops(self.enterID, self.enterName, self.enterDept, self.listBox)
         self.create_buttons()
         self.create_labels()
-        self.create_listbox()
-        self.enter_data()
+
+
+
 
     def create_buttons(self):
-        insertBtn = Button(self.window, text="Insert", font=("Sans", 12), bg="white",command=lambda: insertData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        insertBtn = Button(self.window, text="Insert", font=("Sans", 12), bg="white", command=self.emp_crud_ops.insertData)
         insertBtn.place(x=20, y=160)
-        updateBtn = Button(self.window, text="Update", font=("Sans", 12), bg="white",command=lambda: updateData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        updateBtn = Button(self.window, text="Update", font=("Sans", 12), bg="white",command=self.emp_crud_ops.updateData)
         updateBtn.place(x=80, y=160)
-        fetchBtn = Button(self.window, text="Fetch", font=("Sans", 12), bg="white",command=lambda: getData(self.enterID, self.enterName, self.enterDept))
+        fetchBtn = Button(self.window, text="Fetch", font=("Sans", 12), bg="white",command=self.emp_crud_ops.getData)
         fetchBtn.place(x=150, y=160)
-        deleteBtn = Button(self.window, text="Delete", font=("Sans", 12), bg="white",command=lambda: removeData(self.enterID, self.enterName, self.enterDept, self.listBox))
+        deleteBtn = Button(self.window, text="Delete", font=("Sans", 12), bg="white",command=self.emp_crud_ops.removeData)
         deleteBtn.place(x=210, y=160)
-        resetBtn = Button(self.window, text="Reset", font=("Sans", 12), bg="white",command=lambda: resetFields(self.enterID, self.enterName, self.enterDept))
+        resetBtn = Button(self.window, text="Reset", font=("Sans", 12), bg="white",command=self.emp_crud_ops.resetFields)
         resetBtn.place(x=20, y=210)
 
     def create_labels(self):
